@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using FantasyTrades.Models;
-using FantasyTrades.Models.ManageViewModels;
-using FantasyTrades.Services;
+using Szalapski.FantasyTrades.Models;
+using Szalapski.FantasyTrades.Models.ManageViewModels;
+using Szalapski.FantasyTrades.Services;
 
-namespace FantasyTrades.Controllers
+namespace Szalapski.FantasyTrades.Controllers
 {
     [Authorize]
     public class ManageController : Controller

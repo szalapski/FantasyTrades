@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using FantasyTrades.Models;
-using FantasyTrades.Models.AccountViewModels;
-using FantasyTrades.Services;
+using Szalapski.FantasyTrades.Models;
+using Szalapski.FantasyTrades.Models.AccountViewModels;
+using Szalapski.FantasyTrades.Services;
 
-namespace FantasyTrades.Controllers
+namespace Szalapski.FantasyTrades.Controllers
 {
     [Authorize]
     public class AccountController : Controller

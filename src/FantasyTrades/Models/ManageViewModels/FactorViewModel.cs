@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FantasyTrades.Models.ManageViewModels
+namespace Szalapski.FantasyTrades.Models.ManageViewModels
 {
     public class FactorViewModel
     {

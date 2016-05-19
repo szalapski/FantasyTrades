@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using FantasyTrades.Data;
-using FantasyTrades.Models;
-using FantasyTrades.Services;
+using Szalapski.FantasyTrades.Data;
+using Szalapski.FantasyTrades.Models;
+using Szalapski.FantasyTrades.Services;
 
-namespace FantasyTrades
+namespace Szalapski.FantasyTrades
 {
     public class Startup
     {

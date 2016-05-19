@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-FantasyTrades-1120ae25-b59d-47c7-acc9-6baed1b567fb",
 
   "dependencies": {
@@ -35,7 +35,7 @@
       "version": "1.0.0-preview1-final",
       "type": "build"
     },
-    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc":  {
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview1-final",
       "type": "build"
     }

@@ -42,3 +42,16 @@ textarea {
     display: none
   }
 }
+
+label, input, section{
+    display: block;
+    font-weight: normal;
+    width: 100%;
+}
+
+
+
+#teamUrl{
+    width: 100%;
+
+}

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FantasyTrades.Data.Migrations
+namespace Szalapski.FantasyTrades.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

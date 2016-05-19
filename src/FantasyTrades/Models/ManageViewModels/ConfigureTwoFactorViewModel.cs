@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace FantasyTrades.Models.ManageViewModels
+namespace Szalapski.FantasyTrades.Models.ManageViewModels
 {
     public class ConfigureTwoFactorViewModel
     {

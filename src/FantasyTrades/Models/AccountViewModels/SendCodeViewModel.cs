@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace FantasyTrades.Models.AccountViewModels
+namespace Szalapski.FantasyTrades.Models.AccountViewModels
 {
     public class SendCodeViewModel
     {

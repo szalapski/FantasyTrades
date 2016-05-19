@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using FantasyTrades.Models;
+using Szalapski.FantasyTrades.Models;
 
-namespace FantasyTrades.Data
+namespace Szalapski.FantasyTrades.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

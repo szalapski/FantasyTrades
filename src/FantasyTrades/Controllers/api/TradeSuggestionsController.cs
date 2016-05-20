@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Szalapski.FantasyTrades.Lib;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,19 +12,26 @@ namespace Szalapski.FantasyTrades.Controllers.api
     [Route("api/[controller]")]
     public class TradeSuggestionsController : Controller
     {
+        public TradeSuggestionsController()
+        {
+
+        }
+        ISuggestor _suggestor = new Suggestor();
+
 
         [HttpGet]
-        public IEnumerable<string> Get(string teamUrl)
-        {
+        public IActionResult Get(string teamUrl) { 
             Uri teamUri;
             bool isUri = Uri.TryCreate(teamUrl, UriKind.Absolute, out teamUri);
-            if (!isUri) return new string[] { "error parsing URI" };
+            if (!isUri) return this.BadRequest(new TradeSuggestion(new Uri("http://example.com/error"), new Uri("http://example.com/error")));
             return Get(teamUri);
         }
 
-        private IEnumerable<string> Get(Uri teamUri)
-        { 
-            return new string[] { teamUri.ToString(), "value2" };
+        private IActionResult Get(Uri teamUri)
+        {
+            TradeSuggestion suggestion = _suggestor.SuggestTrade(teamUri);
+
+            return this.Ok(suggestion);
         }
 
 

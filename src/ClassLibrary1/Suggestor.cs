@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Szalapski.FantasyTrades.Lib
 {
-    // This project can output the Class library as a NuGet Package.
-    // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
-    public class Suggestor
+    public class Suggestor : ISuggestor
     {
-        public void SuggestTrade(Uri TeamUri)
+        public Suggestor()
         {
+
+        }
+
+        public TradeSuggestion SuggestTrade(Uri teamUri)
+        {
+            var team1 = new Team(teamUri);
+            var team2Uri = new Uri(Regex.Replace(teamUri.ToString(), @"teamId=(\d*)", "teamId=1"));
+            var team2 = new Team(team2Uri);
+            return new TradeSuggestion(teamUri, team2Uri);
         }
     }
 }

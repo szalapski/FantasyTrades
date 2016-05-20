@@ -6,8 +6,9 @@ namespace Szalapski.FantasyTrades.Lib
     {
         public Team(Uri teamUri)
         {
-            this.teamUri = teamUri;
+            TeamUri = teamUri;
         }
-        private Uri teamUri;
+
+        public Uri TeamUri {get; private set;}
     }
 }

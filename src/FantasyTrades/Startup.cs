@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Szalapski.FantasyTrades.Data;
 using Szalapski.FantasyTrades.Models;
 using Szalapski.FantasyTrades.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Szalapski.FantasyTrades
 {

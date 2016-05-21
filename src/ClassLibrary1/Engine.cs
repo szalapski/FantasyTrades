@@ -31,7 +31,11 @@ namespace Szalapski.FantasyTrades.Lib
                 }
             }
 
-            return result.OrderByDescending(t => t.Receive.Sum(tp =>tp.Rating) - t.GiveUp.Sum(tp => tp.Rating));
+            return result
+                .OrderByDescending(t => t.Fairness)
+                .ThenByDescending(t => t.Receive.Sum(tp=> tp.Rating))
+                
+                ;
         }
     }
 }

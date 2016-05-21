@@ -10,9 +10,12 @@ namespace Szalapski.FantasyTrades.Lib
             GiveUp = giveUp.ToArray();
             Receive = receive.ToArray();
         }
-        public Trade(TradablePlayer giveUp, TradablePlayer receive) : this(new[] { giveUp }, new[] { receive}) {}
+        public Trade(TradablePlayer giveUp, TradablePlayer receive) : this(new[] { giveUp }, new[] { receive }) { }
 
         public TradablePlayer[] GiveUp { get; private set; }
         public TradablePlayer[] Receive { get; private set; }
+
+        public decimal Fairness => Receive.Sum(tp => tp.Rating) - GiveUp.Sum(tp => tp.Rating);
+        public bool AllScrubs => Receive.All(tp => tp.Rating <= 0);
     }
 }

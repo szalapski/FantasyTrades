@@ -23,5 +23,8 @@
         public bool AllowScrubs { get; set; } = false;
 
         public decimal ScrubThreshold { get; set; } = 1.0M;
+
+
+        // Ideas: BuyLow, SellHigh, SellScrubs, NeedDepth, GiveUpDepth 
     }
 }

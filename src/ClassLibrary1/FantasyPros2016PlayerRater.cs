@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 
 namespace Szalapski.FantasyTrades.Lib
 {
-    public class SimplePlayerRater : IPlayerRater
+    public class FantasyPros2016PlayerRater : IPlayerRater
     {
-        private SortedDictionary<string, decimal> _source = new SortedDictionary<string, decimal>();
 
-        public SimplePlayerRater()
+        private SortedDictionary<string, decimal> _source = new SortedDictionary<string, decimal>();
+        
+        // Data from https://www.fantasypros.com/mlb/auction-values/overall.php
+        public FantasyPros2016PlayerRater()
         {
             _source.Add("Mike Trout", 33);
             _source.Add("Bryce Harper", 31);

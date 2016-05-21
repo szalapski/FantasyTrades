@@ -4,6 +4,6 @@ namespace Szalapski.FantasyTrades.Lib
 {
     public interface ITradeEngine
     {
-        List<Trade> ProposeTrades(TradeSuggestion result);
+        IEnumerable<Trade> ProposeTrades(TradeSuggestion result);
     }
 }

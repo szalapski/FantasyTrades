@@ -7,10 +7,10 @@ namespace Szalapski.FantasyTrades.Lib
 {
     public class DummyEngine : ITradeEngine
     {
-        public List<Trade> ProposeTrades(TradeSuggestion result)
+        public IEnumerable<Trade> ProposeTrades(TradeSuggestion result)
         {
-            var trade1 = new Trade(new Player("Babe Ruth"), new Player("Cap Anson"));
-            var trade2 = new Trade(new Player("Lou Gehrig"), new Player("Wee Willie Keeler"));
+            var trade1 = new Trade(new TradablePlayer("Babe Ruth",50), new TradablePlayer("Cap Anson", 30));
+            var trade2 = new Trade(new TradablePlayer("Lou Gehrig",40), new TradablePlayer("Wee Willie Keeler",40));
             return new List<Trade> { trade1, trade2 };
 
         }

@@ -7,7 +7,7 @@ namespace Szalapski.FantasyTrades.Lib
 {
     public class DummyTeamScraper : ITeamScraper
     {
-        static bool _arrow = false;
+        static bool _arrow = true;
         public void Populate(Team team)
         {
             string[] players;

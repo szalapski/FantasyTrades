@@ -42,8 +42,8 @@ namespace Szalapski.FantasyTrades.Lib
                     if (Math.Abs(player2Rating - player1Rating) <= 1.0M)
                     {
                         result.Add(new Trade(
-                            new TradablePlayer(player1.Name, player1Rating),
-                            new TradablePlayer(player2.Name, player2Rating),
+                            new TradablePlayer(player1, player1Rating),
+                            new TradablePlayer(player2, player2Rating),
                             Tweaks));
                     } 
                 }

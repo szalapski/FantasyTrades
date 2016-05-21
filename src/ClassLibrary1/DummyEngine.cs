@@ -9,8 +9,8 @@ namespace Szalapski.FantasyTrades.Lib
     {
         public IEnumerable<Trade> ProposeTrades(TradeSuggestion result)
         {
-            var trade1 = new Trade(new TradablePlayer("Babe Ruth",50), new TradablePlayer("Cap Anson", 30), new EngineTweaks());
-            var trade2 = new Trade(new TradablePlayer("Lou Gehrig",40), new TradablePlayer("Wee Willie Keeler",40), new EngineTweaks());
+            var trade1 = new Trade(new TradablePlayer("Babe Ruth","OF", 50), new TradablePlayer("Cap Anson", "SP", 30), new EngineTweaks());
+            var trade2 = new Trade(new TradablePlayer("Lou Gehrig", "1B", 40), new TradablePlayer("Wee Willie Keeler", "2B", 40), new EngineTweaks());
             return new List<Trade> { trade1, trade2 };
 
         }

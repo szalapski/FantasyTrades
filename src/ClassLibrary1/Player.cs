@@ -2,10 +2,12 @@
 {
     public class Player
     {
-        public Player(string Name)
+        public Player(string name, string positions)
         {
-            this.Name = Name;
+            Name = name;
+            Positions = positions;
         }
         public string Name { get; private set; }
+        public string Positions { get; private set; }
     }
 }

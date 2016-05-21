@@ -16,7 +16,7 @@ namespace Szalapski.FantasyTrades.Controllers.api
         {
 
         }
-        ISuggestor _suggestor = new Suggestor(new DummyTeamScraper(), new DummyEngine());
+        ISuggestor _suggestor = new Suggestor(new DummyTeamScraper(), new Engine(new SimplePlayerRater()));
 
 
         [HttpGet]

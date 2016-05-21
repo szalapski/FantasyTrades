@@ -21,7 +21,7 @@ namespace Szalapski.FantasyTrades.Lib
             var team1 = new Team(teamUri);
             var team2Uri = new Uri(Regex.Replace(teamUri.ToString(), @"teamId=(\d*)", "teamId=1"));
             var team2 = new Team(team2Uri);
-            var result = new TradeSuggestion(teamUri, team2Uri);
+            var result = new TradeSuggestion(teamUri, team2Uri, _engine.Tweaks);
 
             _scraper.Populate(result.Team1);
             _scraper.Populate(result.Team2);

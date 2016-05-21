@@ -13,6 +13,20 @@ namespace Szalapski.FantasyTrades.Lib
         }
         IPlayerRater _rater;
 
+        public Engine(IPlayerRater rater, EngineTweaks tweaks) : this(rater)
+        {
+            Tweaks = tweaks;
+        }
+
+        public EngineTweaks Tweaks { get; } = new EngineTweaks();
+
+        private IEnumerable<Trade> Reorder(IList<Trade> trades){
+            return trades
+                .OrderByDescending(trade => Tweaks.FavorBiasedTrades ? trade.Favorability : trade.Fairness)
+                .ThenByDescending (trade => trade.Receive.Sum(tp => tp.Rating))
+                ;
+        }
+
         public IEnumerable<Trade> ProposeTrades(TradeSuggestion suggestion)
         {
             var result = new List<Trade>();
@@ -22,20 +36,20 @@ namespace Szalapski.FantasyTrades.Lib
                 foreach (Player player2 in suggestion.Team2.Players)
                 {
                     decimal player2Rating = _rater.Rate(player2);
+                    if (!Tweaks.AllowScrubs && player2Rating <= Tweaks.ScrubThreshold) continue;
+                    if (!Tweaks.AllowNegativeTrades && player2Rating < player1Rating) continue;
 
                     if (Math.Abs(player2Rating - player1Rating) <= 1.0M)
                     {
-                        result.Add(new Trade(new TradablePlayer(player1.Name, player1Rating),
-                            new TradablePlayer(player2.Name, player2Rating)));
+                        result.Add(new Trade(
+                            new TradablePlayer(player1.Name, player1Rating),
+                            new TradablePlayer(player2.Name, player2Rating),
+                            Tweaks));
                     } 
                 }
             }
 
-            return result
-                .OrderByDescending(t => t.Fairness)
-                .ThenByDescending(t => t.Receive.Sum(tp=> tp.Rating))
-                
-                ;
+            return Reorder(result);
         }
     }
 }

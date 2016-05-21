@@ -515,11 +515,15 @@ namespace Szalapski.FantasyTrades.Lib
             _source.Add("Brian Matusz", -4);
         }
 
+        public decimal MaxRating => _source.Values.Max();
+
         public decimal Rate(Player player1)
         {
             decimal result = -100.0M;
             _source.TryGetValue(player1.Name, out result);
             return result;
         }
+
+
     }
 }

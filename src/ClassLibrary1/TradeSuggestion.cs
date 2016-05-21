@@ -12,9 +12,8 @@ namespace Szalapski.FantasyTrades.Lib
 
         }
 
+        public List<Trade> TradesToTry { get; } = new List<Trade>();
         public Team Team1 { get; private set; }
         public Team Team2 { get; private set; }
-
-        public List<Trade> TradesToTry { get; } = new List<Trade>();
     }
 }

@@ -23,7 +23,8 @@ namespace Szalapski.FantasyTrades.Controllers.api
         public IActionResult Get(string teamUrl) { 
             Uri teamUri;
             bool isUri = Uri.TryCreate(teamUrl, UriKind.Absolute, out teamUri);
-            if (!isUri) return this.BadRequest(new TradeSuggestion(new Uri("http://example.com/error"), new Uri("http://example.com/error")));
+            if (!isUri) return this.BadRequest(
+                new TradeSuggestion(new Uri("http://example.com/error"), new Uri("http://example.com/error"), new EngineTweaks()));
             return Get(teamUri);
         }
 

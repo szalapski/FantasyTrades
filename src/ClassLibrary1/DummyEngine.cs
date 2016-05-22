@@ -7,6 +7,8 @@ namespace Szalapski.FantasyTrades.Lib
 {
     public class DummyEngine : ITradeEngine
     {
+        public EngineTweaks Tweaks { get; set; } = null;
+
         public IEnumerable<Trade> ProposeTrades(TradeSuggestion result)
         {
             var trade1 = new Trade(new TradablePlayer("Babe Ruth","OF", 50), new TradablePlayer("Cap Anson", "SP", 30), new EngineTweaks());
